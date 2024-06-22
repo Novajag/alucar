@@ -1,0 +1,25 @@
+.body-1{
+	overflow: hidden;
+}
+
+.prt-1{
+	
+
+	left: 2000px;
+	transition: 1s !important;
+}
+	
+
+.prt-2{
+	
+	left: 150px;
+	transition: 1s !important;
+}
+
+.prt-3{
+	right: 2000px;
+	transition: 1s !important;
+}
+
+/* nav */
+
