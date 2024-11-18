@@ -1,4 +1,5 @@
 <?php 
+
 session_start();
 
 $formulario=$_POST['formulario'] ?? '';
@@ -62,8 +63,15 @@ $formulario=$_POST['formulario'] ?? '';
 
  	$nome2=$_POST['nome-c2'];
 	$cpf2=$_POST['cpf-c2'];  
-	$senha2=$_POST['senha-c2']; 
-	$senha3=$_POST['senha-c3'];
+	if ("admin-usuario" == $formulario ){
+		$senha2=$_POST['senha-c2']; 
+		$senha3=$senha2;
+		$valido= true; 
+	}else{
+		$senha2=$_POST['senha-c2']; 
+		$senha3=$_POST['senha-c3'];
+	}
+
 
 	// validação de cpf //
 
@@ -89,15 +97,33 @@ $formulario=$_POST['formulario'] ?? '';
     	$d2 = false;
     	exit();
 	}
+
 	if (true) {
-		$sql = "INSERT INTO j (nome,cpf,senha,produto)
-                                                 VALUES ('$nome2', '$cpf2','$senha2','1 ')";
-                                                
-		$con->query($sql);
-		header('Location: http://localhost/dashboard/site/index.php');
+		$status = "cadastro";
+		$datas = date('Y-m-d H:i:s');
+		
+		$sql = "INSERT INTO j (nome, cpf, senha, produto) VALUES (:nome2, :cpf2, :senha2, :produto)";
+		$stmt = $con->prepare($sql);
+		$stmt->execute([':nome2' => $nome2, ':cpf2' => $cpf2, ':senha2' => $senha2, ':produto' => 1]);
+
+		
+		$id = $con->lastInsertId();
+		
+
+		$sqls = "INSERT INTO registroalt (nome, estatu, idelemento, datas) VALUES (:nome2, :status, :id, :datas)";
+		$stmt2 = $con->prepare($sqls);
+		$stmt2->execute([':nome2' => $nome2, ':status' => $status, ':id' => $id, ':datas' => $datas]);
 	
- 	};
+
+		if ($valido) {
+			header('Location: http://localhost/dashboard/site/admin.php');
+		} else {
+			header('Location: http://localhost/dashboard/site/index.php');
+		}
+	};
+	
 };
+
     
  
 ?>

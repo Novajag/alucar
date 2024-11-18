@@ -14,7 +14,7 @@ function trocar1 (p2,p1) {
 	
 };
 function trocar2 (p2,p1) {
-	p2.classList.remove("prt-1");
+	p2.classList.remove("prt-3");
 	p2.classList.add("prt-2");
 	p1.classList.remove("prt-2");
 	p1.classList.add("prt-1");

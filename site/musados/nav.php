@@ -7,7 +7,6 @@
 	<title></title>
   <style type="text/css">
     .menu-1{
-
      right: 20000em;
      transition: 0.4s;
   }
@@ -15,6 +14,19 @@
   left: 50px;
   transition: 0.5s;
  }
+ .menus-1 {
+  opacity: 0; 
+  transform: translateY(-20px); 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menus2-1 {
+  opacity: 1;
+  transform: translateY(220px); 
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+
   .li-m{
     list-style: none;
   } 
@@ -24,15 +36,51 @@
      width: 11em; 
      transition: 0.5;
   }
+  .menu{
+    display:flex;
+    align-items: center;
+    flex-direction:column;
+    right: 5%;
+    position: absolute;
+    transition: 0.5;
+    background: linear-gradient(to top, #f5f5f5  , #dcdcdc );
+    border-radius:10px;
+    z-index:100;
+  }
+  .usuario{
+    font-size:60px !important;
+    border-radius:100%;
+    
+    padding:10px;
+  }
   </style>
 </head>
 <body>
 <nav class=" rounded nav-index navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="http://localhost/dashboard/site/inicio.php#"><img src="http://localhost/dashboard/site/img/logo.png" style="width:70px; height: 60px;" ></a>
-    <button class="border border-0 navbar-toggler" type="button">
-      <span class="material-symbols-outlined">reorder</span>
+    <button class="border border-0 navbar-toggler"onclick="trocarM2(m2)" type="button">
+      <span class="material-symbols-outlined" >reorder</span>
     </button>
+    <div class=" col-xs-12 col-md-3 m-3 p-4 menu menus-1 " id="m2">
+          <span class="material-symbols-outlined usuario">person</span>
+        <?php
+          $username = $_SESSION['username'];
+          echo "<h4 class='m-1 p-3 op-title'> " . htmlspecialchars($username) . "</h4>"; 
+        ?>
+        <form  action="http://localhost/dashboard/site/musados/agendas.php" method="post" class="d-flex" role="search">
+          <input class="form-control me-2" type="texto" name="procurar" placeholder="Procurar" aria-label="Search">
+          <input class="btn btn-dark" value="Procurar" type="submit"></input>
+        </form>
+        <h6 class="m-1 p-3 op-title" id="2" > <a class="nav-link" href="http://localhost/dashboard/site/musados/agendas1.php#">sua agenda</a></h6>
+
+        <?php
+           if($username == "root"){
+            echo " <h6 class='m-1 p-3 '><a class='nav-link' href='http://localhost/dashboard/site/admin.php'>admin</a></h6>";
+           }
+        ?>
+        <h6 class="m-1 p-3 " id="1"><a href="http://localhost/dashboard/site/config/fechar.php"><div class="btn btn-dark">fechar Sessão</div></a></h6>
+		  </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -55,9 +103,14 @@
         <li class="nav-item">
           <a class="nav-link" href="http://localhost/dashboard/site/musados/agendas1.php#">sua agenda</a>
         </li> 
-        <li class="nav-item">
-          <a class="nav-link" aria-disabled="true">mais procurados</a>
-        </li>
+        <?php
+           if($username == "root"){
+            echo " <li class='nav-item'><a class='nav-link' href='http://localhost/dashboard/site/admin.php'>admin</a></li>";
+
+           }
+        
+        ?>
+       
       </ul>
       <form action="http://localhost/dashboard/site/musados/agendas.php" method="post" class="d-flex" role="search">
         <input class="form-control me-2" type="texto" name="procurar" placeholder="Procurar" aria-label="Search">
@@ -68,6 +121,7 @@
 </nav>
 <script type="text/javascript">
   var m1 = document.getElementById('m1')
+  var m2 = document.getElementById('m2')
  
 
   function trocarM (m1) {
@@ -81,8 +135,28 @@
       m1.classList.add('menu-1');
 
      }
-    // body...
+    
   }
+
+ 
+
+  function trocarM2 (m2) {
+    if (m2.classList.contains('menus-1')) {
+      m2.classList.remove('menus-1');
+      m2.classList.add('menus2-1');
+
+    }
+     else{
+      m2.classList.remove('menus2-1');
+      m2.classList.add('menus-1');
+
+     }
+    
+  }
+
+
+
+
 </script> 
 </body>
 </html>

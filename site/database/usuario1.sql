@@ -1,4 +1,11 @@
-
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 07/11/2024 às 01:21
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -11,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `usuario`
+-- Banco de dados: `usuario`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `agendas`
+-- Estrutura para tabela `agendas`
 --
 
 CREATE TABLE `agendas` (
@@ -28,16 +35,17 @@ CREATE TABLE `agendas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `agendas`
+-- Despejando dados para a tabela `agendas`
 --
 
 INSERT INTO `agendas` (`idusuario`, `nomeusuario`, `idcarro`, `dia`) VALUES
-('1', 'jorge alfonso', '2', '2');
+('1', 'jorge alfonso', '2', '2'),
+('31', 'root', '8', '10');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `carros`
+-- Estrutura para tabela `carros`
 --
 
 CREATE TABLE `carros` (
@@ -56,14 +64,10 @@ CREATE TABLE `carros` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `carros`
+-- Despejando dados para a tabela `carros`
 --
 
 INSERT INTO `carros` (`marca`, `carroId`, `nomeCarros`, `preço`, `puntos`, `img`, `img1`, `img2`, `kilo`, `velocidade`, `força`, `estado`) VALUES
-('chevrolet', 1, 'Toyota Corolla (2022)', 'R$ 90,000', 0, 'https://revistacarro.com.br/wp-content/uploads/2019/12/Toyota-Corolla-XEi_4.jpg', 'https://revistacarro.com.br/wp-content/uploads/2021/02/01-Corolla-2022-Interior-scaled-1.jpg', 'https://revistacarro.com.br/wp-content/uploads/2019/12/Toyota-Corolla-XEi_1.jpg', '', '180 km/h', '130 HP', 'novo'),
-('Honda', 2, 'Honda Civic (2023)', 'R$ 95,000', 0, 'https://cdn.motor1.com/images/mgl/W81RXg/s2/honda-civic-sedan-e-hev-2023.webp', 'https://dicas.olx.com.br/wp-content/uploads/2023/06/honda-civic-e-hev-1024x576.webp', 'https://cdn.motor1.com/images/mgl/9mZ1Xg/s4/honda-civic-sedan-e-hev-2023.webp', '', '200 km/h', '150 HP', 'usado'),
-('Ford', 3, 'Ford Mustang (2022', 'R$ 220,000', 0, 'https://revistacarro.com.br/wp-content/uploads/2022/04/Mustang-Mach-1-2022_4.jpg', 'https://revistacarro.com.br/wp-content/uploads/2021/04/Mustang-Mach-1_7.jpg', 'https://img.autobytel.com/chrome/colormatched_02/white/640/cc_2022foc21_02_640/cc_2022foc210066_02_640_g1.jpg', '', '250 km/h', '310 HP', 'novo'),
-('chevrolet', 6, 'Chevrolet Camaro (2023)', 'R$ 210,000', 0, 'https://hips.hearstapps.com/hmg-prod/images/2019-chevrolet-camaro-2-0t-1le-6mt-106-1539790974.jpg?crop=0.675xw:0.620xh;0.252xw,0.335xh&resize=1200:*', '', 'https://bocamafrapremium.com.br/wp-content/uploads/2024/05/b6f34575ab644363b11af42c8793550b_1698777083701.jpg', '', '240 km/h', ' 275 HP', 'novo'),
 ('BMW', 8, 'BMW Serie 3 (2022)', 'R$ 150,000', 0, 'https://img1.icarros.com/dbimg/imgadicionalanuncio/5/363516707_1.webp', 'https://media.gazetadopovo.com.br/2019/02/7054866b4dd78e36cd287f6190d09ce1-gpMedium.jpg', 'https://media.gazetadopovo.com.br/2019/02/b10b28655cdf648a3f8d049c7ec95b43-gpMedium.jpg', '', '220 km/h', '190 HP', 'novo'),
 ('Mercedes-Benz ', 9, 'Mercedes-Benz Clase C (2023)', 'R$ 160,000', 0, 'https://www.mercedes-benzautoclasse.com/wp-content/uploads/2023/10/01e9902b-2956-4b39-9300-458fc3c9b031_LHDMercedes-BenzClaseCgrisexterior-04-1024x576.jpg', 'https://acroadtrip.blob.core.windows.net/catalogo-imagenes/m/RT_V_e4109132de26436da739fd86d5b715d0.jpg', 'https://production.autoforce.com/uploads/picture/image/177625743/main_webp_comprar-classe-c-sedan-2023_a169419add.jpg.webp', '', '230 km/h', '200 HP', 'novo'),
 ('Audi', 13, 'Audi A4 (2022)', 'R$ 145,000', 0, 'https://revistacarro.com.br/wp-content/uploads/2022/03/Audi-A4-Sedan-2022.jpg', 'https://www.webmotors.com.br/wp-content/uploads/2022/03/15165020/Audi-A4-3.jpg', 'https://www.webmotors.com.br/wp-content/uploads/2022/03/15164948/Audi-A4-2.jpg', '', '215 km/h', '180 HP', 'novo'),
@@ -80,12 +84,13 @@ INSERT INTO `carros` (`marca`, `carroId`, `nomeCarros`, `preço`, `puntos`, `img
 ('Chrysler', 24, 'Chrysler 300 (2023)', 'R$ 200,000', 0, 'https://www.planetcarsz.com/img/noticias/2022/09/chrysler-300c-2023-01-20220915081518-1280x925.jpg', 'https://www.planetcarsz.com/img/carros/galeria/2022/09/chrysler-300c-2023-05-20220915081347-1280x925.jpg', 'https://www.planetcarsz.com/noticias-de-carros/chrysler-300c-2023-o-sedan-se-despede-com-um-motor-v8-de-492-cv', '', '250 km/h', '292 HP', 'novo'),
 ('Porsche', 25, 'Porsche 911 (2023)', 'R$ 700,000', 0, 'https://autosdeprimera.com/wp-content/uploads/2023/08/porsche-911-st-a.jpg', 'https://autosdeprimera.com/wp-content/uploads/2023/08/porsche-911-st-b.jpg', 'https://autosdeprimera.com/wp-content/uploads/2023/08/porsche-911-st-c.jpg', '', ' 300 km/h', '370 HP', 'novo'),
 ('ferrari', 26, 'Ferrari 488 (2022)', 'R$1,500,000', 0, 'https://quatrorodas.abril.com.br/wp-content/uploads/2018/02/ferrari_488_pista.jpg?quality=70&strip=info&w=1024&crop=1', 'https://quatrorodas.abril.com.br/wp-content/uploads/2018/02/ferrari_488_pista_1.jpg?quality=70&strip=info&w=1024&crop=1', 'https://quatrorodas.abril.com.br/wp-content/uploads/2018/02/ferrari_488_pista_48.jpg?quality=70&strip=info&w=1024&crop=1', '', '330 km/h', '661 HP', 'novo'),
-('lamborghini', 27, 'Lamborghini Huracán (2023)', 'R$ 2,000,000', 0, 'https://www.lamborghinigoldcoast.com/imagetag/10874/2/l/New-2023-Lamborghini-Huracan-Tecnica-1689186022.jpg', 'https://prod.pictures.autoscout24.net/listing-images/7b5fa3a5-1345-4f9f-bf58-9b6a250d66a4_4981a380-3618-4b32-a20a-d371d090c533.jpg/720x540.webp', 'https://prod.pictures.autoscout24.net/listing-images/7b5fa3a5-1345-4f9f-bf58-9b6a250d66a4_4244446d-dcbc-40b7-a112-d50a60aee591.jpg/720x540.webp', '', '325 km/h', '610 HP', 'novo');
+('fiat', 28, 'fiat 1', '30', 0, '', '', '', '', '', '', ''),
+('jkl', 29, 'jkl', '30', 0, 'https://img1.icarros.com/dbimg/imgadicionalanuncio...', 'https://img1.icarros.com/dbimg/imgadicionalanuncio...', 'https://img1.icarros.com/dbimg/imgadicionalanuncio...', '', '', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `j`
+-- Estrutura para tabela `j`
 --
 
 CREATE TABLE `j` (
@@ -97,20 +102,18 @@ CREATE TABLE `j` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `j`
+-- Despejando dados para a tabela `j`
 --
 
 INSERT INTO `j` (`id`, `nome`, `cpf`, `senha`, `produto`) VALUES
-(1, 'jorge alfonso', 71195976208, '123', 1),
-(31, 'antonio', 71167217, '123', 1),
-(32, 'antonio', 71195967217, '123', 1),
-(34, 'andrew', 71195967217, 'jkl', 1),
-(35, 'devora', 71828589160, '123', 1);
+(31, 'root', 71195976208, '123', 1),
+(39, 'flor', 71195967217, '123', 1),
+(48, 'jlk', 71195967217, '123', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `puntos`
+-- Estrutura para tabela `puntos`
 --
 
 CREATE TABLE `puntos` (
@@ -120,7 +123,7 @@ CREATE TABLE `puntos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `puntos`
+-- Despejando dados para a tabela `puntos`
 --
 
 INSERT INTO `puntos` (`carroId`, `nome`, `puntos`) VALUES
@@ -145,38 +148,75 @@ INSERT INTO `puntos` (`carroId`, `nome`, `puntos`) VALUES
 (2, 'jorge alfonso', '1'),
 (2, 'jorge alfonso', '5');
 
+-- --------------------------------------------------------
+
 --
--- Índices para tablas volcadas
+-- Estrutura para tabela `registroalt`
+--
+
+CREATE TABLE `registroalt` (
+  `idalt` int(11) NOT NULL,
+  `estatu` varchar(20) NOT NULL,
+  `Idelemento` int(11) NOT NULL,
+  `datas` varchar(100) NOT NULL,
+  `nome` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `registroalt`
+--
+
+INSERT INTO `registroalt` (`idalt`, `estatu`, `Idelemento`, `datas`, `nome`) VALUES
+(1, 'Excluido', 37, '2024-11-05 01:09:09 ', 'jlk'),
+(2, 'cadastro', 47, '2024-11-05 21:54:28', 'flor'),
+(3, 'Excluido', 38, '2024-11-05 21:54:55 ', 'flor'),
+(4, 'Excluido', 38, '2024-11-05 21:54:55 ', 'flor'),
+(5, 'cadastro', 48, '2024-11-06 00:24:08', 'jlk');
+
+--
+-- Índices para tabelas despejadas
 --
 
 --
--- Indices de la tabla `carros`
+-- Índices de tabela `carros`
 --
 ALTER TABLE `carros`
   ADD PRIMARY KEY (`carroId`) USING BTREE;
 
 --
--- Indices de la tabla `j`
+-- Índices de tabela `j`
 --
 ALTER TABLE `j`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- Índices de tabela `registroalt`
+--
+ALTER TABLE `registroalt`
+  ADD PRIMARY KEY (`idalt`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `carros`
+-- AUTO_INCREMENT de tabela `carros`
 --
 ALTER TABLE `carros`
-  MODIFY `carroId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `carroId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT de la tabla `j`
+-- AUTO_INCREMENT de tabela `j`
 --
 ALTER TABLE `j`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
+--
+-- AUTO_INCREMENT de tabela `registroalt`
+--
+ALTER TABLE `registroalt`
+  MODIFY `idalt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

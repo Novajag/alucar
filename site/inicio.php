@@ -56,19 +56,34 @@ if ($result === false) {
   				font-style: normal;
   				color:#fff ;
 			}
-
+			.contenedor-titulo{
+				height: 300px;
+				 margin-bottom:300px;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				background:url("https://img.freepik.com/fotos-gratis/os-farois-e-o-capo-de-um-carro-preto-de-luxo_146671-19730.jpg?w=900&t=st=1713563764~exp=1713564364~hmac=2312ab1b6790fffbe7bb1bfdae9058761c56395ac0024b0c55f3b58cc7878cb9");
+				background-repeat:no-repeat;
+				background-size:cover;
+				background-position:center;
+			}
+			@media (max-width:788px) {
+				.titulo{
+					font-size: 7em;
+				}
+				
+			}
 	    	
 	    </style>
 	    
 </head>
 <body>
-	<?php include ('musados\nav.php'); ?>
+	<?php include ('musados/nav.php'); ?>
 	<section class="row">
-		<div class="position-relative z-1 w-100 contain tex-center" style="height: 600px;" >
-			<img class="w-100 h-50 div-img"  src="https://img.freepik.com/fotos-gratis/os-farois-e-o-capo-de-um-carro-preto-de-luxo_146671-19730.jpg?w=900&t=st=1713563764~exp=1713564364~hmac=2312ab1b6790fffbe7bb1bfdae9058761c56395ac0024b0c55f3b58cc7878cb9">
-			<h1 class="position-absolute titulo">Bem-vindo</h1>
+		<div class="position-relative z-1 w-100 contain tex-cente contenedor-titulo" >
+			<h1 class=" titulo">Bem-vindo</h1>
 		</div>
-		<div class="position-relative ">
+		<div class="position-relative z-2  ">
 			<div class=" position-absolute   a  w-100 h-100 ">
 				<div class="row row-cols-4 p-5">
         			<?php

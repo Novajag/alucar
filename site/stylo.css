@@ -3,8 +3,7 @@
 }
 
 .prt-1{
-	
-
+	position: absolute;
 	left: 2000px;
 	transition: 1s !important;
 }
@@ -17,9 +16,27 @@
 }
 
 .prt-3{
+
+	position: absolute;
 	right: 2000px;
 	transition: 1s !important;
 }
 
-/* nav */
+/* responsive */
+
+@media(max-width:768px){
+	.prt-2{
+		left: 100px;
+		transition: 1s !important;
+	}
+	.prt-text-1{
+		position: absolute;
+		top:-300;
+		opacity: 0;
+
+	}
+
+}
+
+
 

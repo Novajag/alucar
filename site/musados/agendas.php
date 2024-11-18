@@ -1,12 +1,12 @@
 <?php
     header('Content-Type: text/html; charset=UTF-8');
-    //Iniciar una nueva sesión o reanudar la existente.
+
     session_start();
-    //Si existe la sesión "cliente"..., la guardamos en una variable.
+
     if (isset($_SESSION['cliente'])){
         $cliente = $_SESSION['cliente'];
     }else{
- 		header('Location: http://localhost/dashboard/site/index.php');//Aqui lo redireccionas al lugar que quieras.
+ 		header('Location: http://localhost/dashboard/site/index.php');
      die() ;
 
     }
@@ -18,11 +18,10 @@ $procurar=$_POST['procurar'];
 
 
 
-// Consulta SQL para obtener los datos de los ítems
 $sql ="SELECT * FROM `carros` WHERE `marca`='$procurar' or `nomeCarros`='$procurar'"; 
 $result = $con->query($sql);
 
-// Verificar si la consulta fue exitosa
+
 if ($result === false) {
     die("Error en la consulta SQL: " . $con->error);
 }

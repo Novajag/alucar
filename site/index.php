@@ -9,8 +9,15 @@
 	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	    <style type="text/css">
+			@media(max-width:768px){
+				.prt-text-1{
+					position: absolute;
+					top:-300;
+					opacity: 0;
 
-			
+				}
+
+			}
 	    </style>
 </head>
 <body class="body-1">
@@ -18,16 +25,16 @@
 
 		<!--  Formulário de registro  -->
 
-		<div style="top: 10px;" class="shadow-lg w-75 p-5 position-absolute prt-1 container tex-center" id="p1">
+		<div style="margin-top: px ;" class="shadow-lg w-75 p-5 prt-1 container tex-center" id="p1">
 
 			<div class="row prt ">
 
-				<div class=" contain text-center  col">
+				<div class=" contain text-center prt-text-1  col-6">
 					<h1 class="m-4">Oi novo usuario</h1> 
 					<p>Bem vindo novo usuário, é um prazer ter conosco, esperamos que goste do nosso serviço</p>
 				</div>
 				
-				<form  action="config\conection.php" method="post" class=" container text-center col">
+				<form  action="config\conection.php" method="post" class=" container text-center col-ms-12 col-md-6">
 					<h1 class="fs-3">
 						Cadastrar
 					</h1>
@@ -73,14 +80,14 @@
         
         <!-- formulario de logim -->
 
-		<div style="top: 95px;" class=" shadow-lg prt-2   w-75 position-absolute p-5 container text-center" id="p2">
+		<div style=" margin-top: 95px ;" class=" shadow-lg prt-2   w-75 p-5 container text-center" id="p2">
 			<div class="row">
-				<div class=" contain text-center prt col">
+				<div class=" contain text-center prt-text-1 prt col">
 					<h1 class="m-4">Oi ;)</h1>
 					<p >Olá, bem-vindo de volta</p>
 				</div>
 			
-				<form action="config\conection.php" method="post" class=" container text-center col">
+				<form action="config\conection.php" method="post" class=" container text-center col-ms-12 col-md-6">
 					<h1 class="fs-3">
 						iniciar sessão
 					</h1>
@@ -119,10 +126,6 @@
 	 	} 	 */
 
  	?>
-	
-
-	
-
 <script src="config\dinamico.js" ></script>
 </body>
 </html>

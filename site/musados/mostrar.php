@@ -6,9 +6,12 @@
 	    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 	<title></title>
+	<style>
+	
+	</style>
 </head>
 <body>
-	<div class="mostrar p-4 roundeds col contain   ">
+	<div class="mostrar col-12 col-md-6 col-lg-3  p-4 roundeds col contain   ">
 		<img class="w-100 rounded" src="<?php echo $producto["img"]; ?>"style="width: 300px; height: 150px; object-fit: cover;">
 		<h6>
 			
